@@ -1,0 +1,68 @@
+
+
+
+/*-------estilos de la lista
+font-family: 'Barrio', cursive;
+font-family: 'Montserrat', sans-serif;-----*/
+
+
+body{
+	margin: 0;
+	padding : 0;
+   
+
+}
+#general{
+	width: 70%;
+	margin: 0 auto;
+	
+	background-color: #B8DC3C;
+	
+	box-shadow: 3px 2px 3px  #E0E0E0 ;
+	padding: 5px;
+}
+ 
+.titulo{
+	text-align: center;
+	font-family: 'Barrio', cursive;
+	font-size: 3em;
+
+}
+
+
+ .formulario {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+#show-all{
+ background-color: #4C49A2;
+ text-align:center;
+ color :white;
+ font-family: 'Montserrat', sans-serif;
+  box-shadow: 1px 2px 1px black;
+} 
+
+#goals li{
+	display: flex;
+	justify-content: space-between;
+	margin :3%;
+	color:white;
+	 background: #CB2402;
+	 box-shadow: 1px 2px 1px black;
+	 font-family: 'Montserrat', sans-serif;
+
+}
+
+
+ul {
+	padding : 0;
+	margin: 3px;
+}
+
+
+button{
+	box-shadow:1px 2px 1px #E0E0E0;
+	border: none;
+
+}
