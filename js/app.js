@@ -4,6 +4,8 @@
 
 /* MODULO TO DO LIST */
 
+/* modificado a jquery */
+
 var toDo =(function(){
 
  // entorno privado
@@ -32,22 +34,9 @@ var toDo =(function(){
 
                while(true){
                	 var goal = new Goal();
-               	 goal.title = document.getElementById("entrada-titulo").value;
-                 if(goal.title === ""){
-                    alert("no agregaste el titulo");
-                    break;
-                   }
-               	 goal.description = document.getElementById("entrada-cuerpo").value;
-                   if(goal.description === ""){
-                    alert("no agregaste la descripcion");
-                    break;
-                   }
-                 goal.id = document.getElementById("entrada-id").value;
-                  if(goal.id === ""){
-                  alert("no agregaste un id");
-                  break;
-                   }
-                 goal.complete = false;
+               	 goal.title = $("#entrada-titulo").val();
+               	 goal.description = $("#entrada-cuerpo").val();
+                 goal.id = $("#entrada-id").val();
                  goals.push(goal);
                  break;
                 }
@@ -82,25 +71,25 @@ var toDo =(function(){
                  goalScreen.li.className = "tarea";
                  container.appendChild(goalScreen.li);
                  goalsScreen.push(goalScreen);
-                 goalScreen.eliminar.addEventListener("click",eliminado);
-                 goalScreen.completar.addEventListener("click",completado);
-                 function  eliminado(){
+                 goalScreen.eliminar.click(function  eliminado(){
                    var div = this.parentElement;
                    console.log(this);
                     div.style.display = "none";
-                 };
-                 function completado(){
+                 });
+                 goalScreen.completar.click(function completado(){
 
                    var div2 = this.parentElement;
                    div2.style.background = "green";
-                 };
+                 });
+
+
                 }
               }
 
 
        // funcion para mostrar todas las tareas  agregadas
           function showall(){
-            var showall = document.getElementById("show-all")
+            var showall = $("#show-all")
             for(var i = 0 ; i < goals.length ; i++){
             var mostrarTodos = document.createElement("p");
             mostrarTodos.className = "muestra";
@@ -116,7 +105,7 @@ var toDo =(function(){
  	iniciar:function(){
   // boton de agregar
        var btnAgregar = document.getElementById("agregar");
-       btnAgregar.onclick = addGoal;
+       btnAgregar.oclick = addGoal;
    // boton de mostrar todos
        var mostrar = document.getElementById("mostrar-todos");
        mostrar.onclick = showall;
